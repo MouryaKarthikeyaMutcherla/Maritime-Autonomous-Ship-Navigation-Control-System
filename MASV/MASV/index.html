@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>MASV - Ship Autonomy Engine</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="cv"></canvas>
+  <div id="top">
+    <div id="bar" class="pn">
+      <b style="color:var(--ac)">⚓ MASV ENGINE</b>
+      <select id="ms"></select>
+      <button id="bm"></button>
+      <button id="bp">Pause</button>
+      <button id="bs">1x</button>
+      <button id="bv">Overview</button>
+      <button id="bl">Status</button>
+      <button id="bo">Export CSV</button>
+      <button id="bw">Weather: CLEAR</button>
+      <button id="bf">Fault: NONE</button>
+      <button id="bc">Heading: PID</button>
+      <button id="bx">Escorts</button>
+      <button id="bd">Dynamics/Controllers</button>
+      <button id="br">Reset</button>
+    </div>
+    <div id="nar" class="pn"></div>
+    <div id="bn" class="pn"></div>
+  </div>
+  <div id="L" class="pn"></div>
+  <div id="lg" class="pn"></div>
+  <div id="pad">
+    <span></span>
+    <button data-k="w">▲</button>
+    <span></span>
+    <button data-k="a">◀</button>
+    <button data-k="s">▼</button>
+    <button data-k="d">▶</button>
+  </div>
+  <div id="cm" class="pn"></div>
+  <div id="dc" class="pn"></div>
+  <div id="end" class="pn"></div>
+  <div id="hp" class="pn">W/S throttle · A/D rudder · T cycles comm/equations panels · E escorts on/off · O export CSV (MATLAB) · K heading controller · G weather · J fault · M auto⇄manual · P pause · F view · 1-7 missions · double-click/tap = new destination · Z enemy · X iceberg · C whirlpool · V rock (at cursor) · wheel zoom</div>
+
+  <!-- Scripts are plain (non-module) files that share one global scope. Load order matters: top to bottom. -->
+  <script src="src/00_core_math.js"></script>
+  <script src="src/01_missions.js"></script>
+  <script src="src/02_state.js"></script>
+  <script src="src/03_dynamics.js"></script>
+  <script src="src/04_perception.js"></script>
+  <script src="src/05_prediction.js"></script>
+  <script src="src/06_planner.js"></script>
+  <script src="src/07_controllers.js"></script>
+  <script src="src/08_escort_fleet.js"></script>
+  <script src="src/09_topology.js"></script>
+  <script src="src/10_world_step.js"></script>
+  <script src="src/11_rendering.js"></script>
+  <script src="src/12_ui_input.js"></script>
+</body>
+</html>
